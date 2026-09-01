@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../corpmail.css">
+<style>
+  /* gallery-only helpers (not part of the app) */
+  .x-sec{margin:26px 0 10px;padding-top:14px;border-top:2px solid var(--navy);}
+  .x-sec h2{font-family:var(--mono);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--navy)}
+  .x-cap{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:10px 0 4px}
+  .x-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-start}
+  .x-sw{width:118px}
+  .x-chip{height:56px;border:1px solid var(--line)}
+  .x-hex{font-family:var(--mono);font-size:11px;margin-top:3px;color:var(--ink)}
+  .x-use{font-size:11px;color:var(--muted);line-height:1.35}
+  .x-toast{position:static;transform:none;opacity:1;display:inline-block;pointer-events:auto}
+</style>
+<title>11 component sheet</title></head><body>
+<div id="app">
+  <div class="x-sec"><h2>1 · Color palette</h2></div>
+  <div class="x-row">
+    <div class="x-sw"><div class="x-chip" style="background:#DFE3EA"></div><div class="x-hex">#DFE3EA --bg</div><div class="x-use">app background (with faint ruled lines)</div></div>
+    <div class="x-sw"><div class="x-chip" style="background:#FFFFFF"></div><div class="x-hex">#FFFFFF --surface</div><div class="x-use">window/card body</div></div>
+    <div class="x-sw"><div class="x-chip" style="background:#F4F5F8"></div><div class="x-hex">#F4F5F8 --surface2</div><div class="x-use">ghost buttons, badges, result rows</div></div>
+    <div class="x-sw"><div class="x-chip" style="background:#1A2433"></div><div class="x-hex">#1A2433 --ink</div><div class="x-use">body text, toast bg</div></div>
+    <div class="x-sw"><div class="x-chip" style="background:#5B6575"></div><div class="x-hex">#5B6575 --muted</div><div class="x-use">labels, captions, secondary text</div></div>
+    <div class="x-sw"><div class="x-chip" style="background:#C7CDD8"></div><div class="x-hex">#C7CDD8 --line</div><div class="x-use">borders, dividers, empty stars (#C9CFDA)</div></div>
+    <div class="x-sw"><div class="x-chip" style="background:#1E3A6E"></div><div class="x-hex">#1E3A6E --navy</div><div class="x-use">window title bars, primary buttons</div></div>
+    <div class="x-sw"><div class="x-chip" style="background:#152A52"></div><div class="x-hex">#152A52 --navy-d</div><div class="x-use">window borders, button hard shadows</div></div>
+    <div class="x-sw"><div class="x-chip" style="background:#C03B2D"></div><div class="x-hex">#C03B2D --stamp</div><div class="x-use">rubber stamps, red buttons, urgency</div></div>
+    <div class="x-sw"><div class="x-chip" style="background:#FFE066"></div><div class="x-hex">#FFE066 --sticky</div><div class="x-use">sticky note, focus outline</div></div>
+    <div class="x-sw"><div class="x-chip" style="background:#2E7D5B"></div><div class="x-hex">#2E7D5B --approve</div><div class="x-use">SENT stamp, THE BOSS tag</div></div>
+    <div class="x-sw"><div class="x-chip" style="background:#B98A1C"></div><div class="x-hex">#B98A1C --gold</div><div class="x-use">filled stars, winner highlight, PROMOTED</div></div>
+  </div>
+
+  <div class="x-sec"><h2>2 · Typography</h2></div>
+  <div class="x-cap">IBM Plex Mono 700 · 11px · tracking .14em · uppercase — labels, window bars, buttons</div>
+  <label style="margin-top:0">Name (as printed on your badge)</label>
+  <div class="x-cap">IBM Plex Sans 700 — names, headings</div>
+  <div style="font-weight:700;font-size:22px">Greg exceeded expectations</div>
+  <div class="x-cap">IBM Plex Serif 400 · 15px/1.65 — email bodies (the "letter" voice)</div>
+  <div class="mail-body">Per my last email, the fish microwaved itself.</div>
+  <div class="x-cap">IBM Plex Mono 700 44px · tracking .35em — room code</div>
+  <div class="roomcode" style="text-align:left;text-indent:0">SYNR</div>
+
+  <div class="x-sec"><h2>3 · Hero logo</h2></div>
+  <div class="hero" style="text-align:center">
+    <div class="fireme">FIRE&nbsp;ME</div>
+    <div class="dont">DON'T</div>
+    <div class="tag">The corporate jargon party game</div>
+  </div>
+
+  <div class="x-sec"><h2>4 · Window chrome (the signature element)</h2></div>
+  <div class="win">
+    <div class="win-bar"><span class="dots">●●●</span><span>Window title</span><span class="bar-right">status text</span></div>
+    <div class="win-body">Window body. 1px navy-d border, hard 3px drop shadow, no border radius anywhere.</div>
+  </div>
+
+  <div class="x-sec"><h2>5 · Buttons</h2></div>
+  <div class="x-cap">primary (navy) / danger-fun (red) / ghost / ghost slim / disabled</div>
+  <button class="btn">Start a party</button>
+  <button class="btn red">Send (and pray)</button>
+  <button class="btn ghost">Join a party</button>
+  <button class="btn ghost slim">📎 Insert corporate jargon</button>
+  <button class="btn" disabled>Call the meeting to order</button>
+
+  <div class="x-sec"><h2>6 · Rubber stamps</h2></div>
+  <div class="x-row" style="gap:34px;padding:14px 8px">
+    <span class="stamp">Your email</span>
+    <span class="stamp green">SENT</span>
+    <span class="stamp gold big">PROMOTED</span>
+    <span class="stamp big">YOU'RE FIRED</span>
+  </div>
+
+  <div class="x-sec"><h2>7 · Inputs</h2></div>
+  <label>Text input + label</label>
+  <input type="text" value="Greg">
+  <label>Room code input</label>
+  <input type="text" class="code" value="SYNR">
+  <label>Email textarea (serif)</label>
+  <textarea style="min-height:90px">Dear team,</textarea>
+
+  <div class="x-sec"><h2>8 · Attendee badge</h2></div>
+  <div class="badge"><div class="clip"></div><div><div class="nm">Alice</div><div class="ti">VP of Vibes</div></div><span class="host-tag">THE BOSS</span></div>
+  <div class="badge"><div class="clip"></div><div><div class="nm">Bob</div><div class="ti">Chief Snack Officer</div></div></div>
+
+  <div class="x-sec"><h2>9 · Sticky note (assignment)</h2></div>
+  <div class="task-note"><span class="k">Your assignment</span>Explain yourself. Admit nothing.</div>
+
+  <div class="x-sec"><h2>10 · Rounds segmented control</h2></div>
+  <div class="seg"><button>2</button><button class="on">3</button><button>4</button><button>5</button></div>
+
+  <div class="x-sec"><h2>11 · Star rating</h2></div>
+  <div class="x-cap">empty / partial (3) with label / full (5)</div>
+  <div class="stars"><button>★</button><button>★</button><button>★</button><button>★</button><button>★</button></div>
+  <div class="stars"><button class="on">★</button><button class="on">★</button><button class="on">★</button><button>★</button><button>★</button></div>
+  <div class="stars-label">MEETS EXPECTATIONS</div>
+  <div class="stars"><button class="on">★</button><button class="on">★</button><button class="on">★</button><button class="on">★</button><button class="on">★</button></div>
+  <div class="stars-label">CEO MATERIAL</div>
+
+  <div class="x-sec"><h2>12 · Timer chip</h2></div>
+  <div class="x-row">
+    <span class="timer">3:47</span>
+    <span class="timer late">0:22</span>
+    <span class="timer late">OVERDUE</span>
+  </div>
+  <div class="x-cap">OVERDUE blinks in the app (1.4s step animation)</div>
+
+  <div class="x-sec"><h2>13 · Result rows (winner / middle / loser)</h2></div>
+  <div class="result-row first">
+    <div class="top"><span class="who">Greg 🏆</span><span class="score">4.67★ · +93 pts</span></div>
+    <div class="subj">“RE: Incident Report: Break Room”</div>
+  </div>
+  <div class="result-row">
+    <div class="top"><span class="who">Alice</span><span class="score">3.33★ · +67 pts</span></div>
+    <div class="subj">“RE: Incident Report: Break Room”</div>
+  </div>
+  <div class="result-row last">
+    <div class="top"><span class="who">Dana — PIP</span><span class="score">1.67★ · +33 pts</span></div>
+    <div class="subj">“RE: Incident Report: Break Room”</div>
+  </div>
+
+  <div class="x-sec"><h2>14 · Standings row</h2></div>
+  <div class="standing"><span>1. Greg</span><span>173 pts</span></div>
+  <div class="standing"><span>2. Alice</span><span>147 pts</span></div>
+
+  <div class="x-sec"><h2>15 · Toast + progress line + waiting</h2></div>
+  <div id="toast" class="show" style="position:static;left:auto;bottom:auto;transform:none;opacity:1;display:inline-block;pointer-events:auto;margin-bottom:8px">HR requires a name for your badge.</div>
+  <div class="progress-line">2 of 4 emails in</div>
+  <div class="waiting"><div class="spin">Waiting for the boss to start…</div></div>
+</div>
+</body></html>

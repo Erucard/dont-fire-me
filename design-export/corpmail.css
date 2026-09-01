@@ -1,0 +1,160 @@
+/* CorpMail™ — the app's full stylesheet, extracted verbatim from index.html.
+   Every visual rule of the current design lives in this file. */
+:root{
+  --bg:#DFE3EA;
+  --surface:#FFFFFF;
+  --surface2:#F4F5F8;
+  --ink:#1A2433;
+  --muted:#5B6575;
+  --line:#C7CDD8;
+  --navy:#1E3A6E;
+  --navy-d:#152A52;
+  --stamp:#C03B2D;
+  --sticky:#FFE066;
+  --sticky-d:#8A6D00;
+  --approve:#2E7D5B;
+  --gold:#B98A1C;
+  --sans:'IBM Plex Sans',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --serif:'IBM Plex Serif',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  background-image:repeating-linear-gradient(0deg,rgba(30,58,110,.025) 0 1px,transparent 1px 28px);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.5;
+  min-height:100vh;
+}
+#app{max-width:540px;margin:0 auto;padding:14px 14px 60px}
+a{color:var(--navy)}
+
+/* ---------- window chrome (the signature) ---------- */
+.win{background:var(--surface);border:1px solid var(--navy-d);box-shadow:0 3px 0 rgba(21,42,82,.28);margin-bottom:16px}
+.win-bar{background:var(--navy);color:#fff;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:7px 10px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.win-bar .dots{letter-spacing:2px;font-size:10px;opacity:.85;flex:none}
+.win-body{padding:16px}
+.win-bar .bar-right{font-size:10px;opacity:.8;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* ---------- stamps ---------- */
+.stamp{
+  display:inline-block;font-family:var(--mono);font-weight:700;text-transform:uppercase;
+  letter-spacing:.18em;color:var(--stamp);border:3px double var(--stamp);
+  padding:3px 12px;transform:rotate(-5deg);font-size:14px;
+  mask-image:radial-gradient(circle at 30% 40%, black 92%, transparent 100%);
+}
+.stamp.green{color:var(--approve);border-color:var(--approve)}
+.stamp.gold{color:var(--gold);border-color:var(--gold)}
+.stamp.big{font-size:22px;padding:6px 18px;border-width:4px}
+
+/* ---------- type ---------- */
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+h1,h2{line-height:1.15}
+.small{font-size:13px;color:var(--muted)}
+.mono{font-family:var(--mono)}
+
+/* ---------- controls ---------- */
+.btn{
+  display:block;width:100%;font-family:var(--mono);font-size:14px;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;cursor:pointer;
+  background:var(--navy);color:#fff;border:1px solid var(--navy-d);
+  box-shadow:0 3px 0 var(--navy-d);padding:14px 16px;margin-top:10px;
+}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--navy-d)}
+.btn.red{background:var(--stamp);border-color:#8F2A20;box-shadow:0 3px 0 #8F2A20}
+.btn.red:active{box-shadow:0 1px 0 #8F2A20}
+.btn.ghost{background:var(--surface2);color:var(--navy);border:1px solid var(--line);box-shadow:0 3px 0 var(--line)}
+.btn.ghost:active{box-shadow:0 1px 0 var(--line)}
+.btn.slim{padding:9px 12px;font-size:12px;margin-top:8px}
+.btn[disabled]{opacity:.45;pointer-events:none}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--sticky);outline-offset:1px}
+label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:12px 0 4px}
+input[type=text],textarea{
+  width:100%;border:1px solid var(--line);background:var(--surface);
+  font-family:var(--sans);font-size:16px;padding:11px 12px;color:var(--ink);border-radius:0;
+}
+textarea{font-family:var(--serif);min-height:170px;resize:vertical;line-height:1.6}
+input.code{font-family:var(--mono);text-transform:uppercase;letter-spacing:.4em;font-size:22px;text-align:center}
+
+/* ---------- home hero ---------- */
+.hero{text-align:center;padding:34px 8px 20px;position:relative}
+.hero .fireme{font-family:var(--sans);font-weight:700;font-size:clamp(58px,17vw,86px);letter-spacing:-.03em;line-height:.95;color:var(--ink)}
+.hero .dont{
+  position:absolute;top:8px;left:50%;transform:translateX(-78%) rotate(-9deg);
+  font-family:var(--mono);font-weight:700;font-size:clamp(24px,7vw,34px);letter-spacing:.22em;
+  color:var(--stamp);border:4px double var(--stamp);padding:2px 14px;background:rgba(255,255,255,.72);
+}
+.hero .tag{margin-top:14px;font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+
+/* ---------- lobby badges ---------- */
+.badge{
+  display:flex;align-items:center;gap:12px;border:1px solid var(--line);
+  background:var(--surface2);padding:10px 12px;margin-top:8px;
+}
+.badge .clip{width:10px;height:26px;border:2px solid var(--muted);border-radius:5px;flex:none;background:var(--surface)}
+.badge .nm{font-weight:700}
+.badge .ti{font-size:12px;color:var(--muted);font-family:var(--mono)}
+.badge .host-tag{margin-left:auto;font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--approve);border:1px solid var(--approve);padding:1px 6px;flex:none}
+.roomcode{font-family:var(--mono);font-weight:700;font-size:44px;letter-spacing:.35em;text-align:center;padding:10px 0 4px;text-indent:.35em}
+.seg{display:flex;gap:6px;margin-top:4px}
+.seg button{flex:1;font-family:var(--mono);font-size:14px;padding:9px 0;background:var(--surface2);border:1px solid var(--line);cursor:pointer;color:var(--ink)}
+.seg button.on{background:var(--navy);color:#fff;border-color:var(--navy-d)}
+
+/* ---------- incoming email / memo ---------- */
+.mail-head{border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:10px}
+.mail-head .row{display:flex;gap:8px;font-size:13px;margin-top:2px}
+.mail-head .k{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);width:64px;flex:none;padding-top:2px}
+.mail-head .v{font-weight:600}
+.mail-body{font-family:var(--serif);font-size:15px;line-height:1.65;white-space:pre-wrap}
+.thread-msg{border-left:3px solid var(--line);padding:6px 0 6px 12px;margin-top:10px}
+.thread-msg .tfrom{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+.thread-msg .ttext{font-family:var(--serif);font-size:15px;line-height:1.55;white-space:pre-wrap}
+.task-note{
+  background:var(--sticky);border:1px solid #E3C337;padding:10px 12px;margin-top:12px;
+  font-size:14px;font-weight:600;box-shadow:2px 3px 0 rgba(26,36,51,.15);transform:rotate(.4deg);
+}
+.task-note .k{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--sticky-d);display:block;margin-bottom:2px}
+
+/* ---------- topbar / timer ---------- */
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:10px}
+.topbar .round{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.timer{font-family:var(--mono);font-weight:700;font-size:15px;border:1px solid var(--line);background:var(--surface);padding:3px 10px}
+.timer.late{color:var(--stamp);border-color:var(--stamp)}
+
+/* ---------- rating cards ---------- */
+.rate-card{margin-bottom:16px}
+.stars{display:flex;gap:4px;justify-content:center;padding:6px 0 2px}
+.stars button{font-size:34px;line-height:1;background:none;border:none;cursor:pointer;color:#C9CFDA;padding:4px 6px}
+.stars button.on{color:var(--gold)}
+.stars-label{text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);min-height:16px}
+.own-note{text-align:center;padding:8px 0 4px}
+
+/* ---------- results ---------- */
+.result-row{border:1px solid var(--line);background:var(--surface2);padding:10px 12px;margin-top:8px}
+.result-row .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.result-row .who{font-weight:700}
+.result-row .score{font-family:var(--mono);font-weight:700;flex:none}
+.result-row .subj{font-size:13px;color:var(--muted);font-style:italic;font-family:var(--serif)}
+.result-row.first{border-color:var(--gold);background:#FBF4DF}
+.result-row.last{border-color:var(--stamp);background:#F9E9E6}
+.standing{display:flex;justify-content:space-between;font-family:var(--mono);font-size:14px;padding:7px 4px;border-bottom:1px dashed var(--line)}
+
+/* ---------- misc ---------- */
+.waiting{ text-align:center;padding:22px 10px}
+.waiting .spin{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.progress-line{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:center;margin:8px 0}
+#toast{
+  position:fixed;left:50%;bottom:22px;transform:translateX(-50%);
+  background:var(--ink);color:#fff;font-family:var(--mono);font-size:13px;
+  padding:10px 16px;opacity:0;pointer-events:none;transition:opacity .25s;max-width:90vw;text-align:center;z-index:50;
+}
+#toast.show{opacity:1}
+.footer{margin-top:26px;text-align:center;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.center{text-align:center}
+.mt8{margin-top:8px}.mt16{margin-top:16px}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+.blink{animation:blink 1.4s step-end infinite}
+@keyframes blink{50%{opacity:.25}}
